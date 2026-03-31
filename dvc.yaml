@@ -1,0 +1,18 @@
+stages:
+  build_features:
+    cmd: python src/features/build_features.py
+    deps:
+      - src/features/build_features.py
+      - data/raw/train.csv
+      - data/raw/test.csv
+    outs:
+      - data/processed
+
+  train_model:
+    cmd: python src/models/train_model.py data/processed
+    deps:
+      - src/models/train_model.py
+      - data/processed/train.csv
+      - params.yaml
+    outs:
+      - models/model.joblib
