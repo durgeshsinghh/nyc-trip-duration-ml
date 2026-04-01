@@ -6,7 +6,7 @@ import numpy as np
 
 app = FastAPI()
 
-model = joblib.load("models/model.joblib")
+model = joblib.load("model.joblib")
 
 
 # -----------------------------
